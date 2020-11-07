@@ -10,7 +10,7 @@
 
      <br>   <br> <br>          
     <form action="#" method="POST" style="text-align: center;"> 
-        <fieldset>
+        <fieldset id="field">
             <legend><strong>Fill out the following details</strong> </legend>
             <br>
         <label for ="fname"> First Name: &nbsp; &nbsp; &nbsp;</label> 
@@ -28,9 +28,10 @@
 
         <label for="message"> Message for Bimala:</label>
         <textarea id="message"></textarea>
+        <br> <br>
         </fieldset>
         <br>
-        <input type="submit" value="Submit"> <br> <br>
+        <input type="submit" id="submit" value="Submit"> <br> <br>
     </form>
         <nav style="text-align: center;">
             
@@ -38,7 +39,72 @@
            
             <br> <br>
             <a href = "biodata.html"> <button> Go to biodata page </button></a>
-        </nav>           
+        </nav> 
+        
+        <script>
+
+            const submit = document.getElementById("submit");
+
+            const printToDiv = text => {
+            document.getElementById("count").textContent = text;
+        }
+            
+
+            function handleSubmit(event){
+                //prevent the default behavior first 
+                event.preventDefault();
+
+                const fName = document.getElementById("fname").value;
+                const lName = document.getElementById("lname").value;
+                const email = document.getElementById("email").value;
+                const telephone = document.getElementById("telephone").value;
+                const message = document.getElementById("message").value;
+
+               
+                //console.log(fName);
+
+                //once you have the info, display the user information 
+                
+                var display= document.createElement("diplay");
+                display.setAttribute("id","displayinfo");
+                document.getElementById("field").appendChild(display);
+                display.innerHTML ="Let us Diplay Information below: "
+
+                //create the paragraph element 
+                var para= document.createElement("p");
+                para.setAttribute("id","info");
+                document.getElementById("displayinfo").appendChild(para);
+                
+                var values = document.getElementById("info");
+                values.innerHTML = "First Name is :" + fName + " " + 
+                "Last Name is :" +lName+ " " +
+                "email  is :" + email+" " +
+                "telephone is :" +telephone+ " " +
+                "Message is :" + message +" ";
+
+                //adding date and time 
+                var currentdate = new Date(); 
+                var datetime = "submitted on: " + currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/" 
+                + currentdate.getFullYear() + " @ "  
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds();
+                values.textContent += datetime;
+
+
+         
+               
+                
+                //insert the values 
+                //para.getElementById
+
+                
+                
+            }
+            submit.addEventListener("click",handleSubmit);
+
+        </script>
     
 </body>
 </html>

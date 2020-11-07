@@ -20,15 +20,25 @@
     </style>
 
     <title>Welcome</title>
-
-      <header>
+    <header>
         <h1 style="text-align: center;"> Welcome to Cognixia, please find Bimala's Information below</h1>
       </header>
-   
-    <br>  <br>
+    
    
 </head>
 <body>
+    <div id="images">
+    </div>
+
+    <div id = "pitch"> 
+        <p>
+            Hello, am a Software Engineer with proficiency in C/C++ with a year of experience in Data Science. Algorithms and Backend systems fascinates me the most. My love for programming stems from its ability to provoke analytical thinking and solve complex challenges. I have a proven record of working with passion and creativity in the work that I do in a professional work environment. My quest for the "whys" and how things work the way they do makes me an excellent problem solver.
+I believe in the power of right intentions, continuous learning, accountability and communication.
+You can reach me at : bbogati@ucdavis.edu
+        </p>
+    </div>
+    <br>
+    
     <nav style="text-align: center;">
         <a href = "biodata.html"><button> Biodata  </button></a>
 
@@ -46,6 +56,56 @@
             <a href="https://github.com/bogati">github</a>
             </nav>
     </aside>
+
+   
+
+    <script>
+        var headdiv = document.getElementById('images');
+        var img = document.createElement("img");
+        img.setAttribute("id","Bimala");
+        headdiv.appendChild(img);
+
+        
+        var image_tracker = 'Bimala';
+        function change(){
+            
+            var image = document.getElementById('Bimala');
+            if(image_tracker=='Bimala'){
+                image.src='images/coding.jpg';  
+                image_tracker = 'coding';
+
+            }
+            else if(image_tracker=='coding'){
+                image.src='images/ucd.png';
+                image_tracker = 'ucd';
+
+            }
+            else if(image_tracker=='ucd'){
+                image.src='images/collabera.png';
+                image_tracker = 'collabera';
+
+            }
+            
+            else{
+                image.src='images/bimala.jpeg';
+                image_tracker = 'Bimala';
+            }
+        }//end of the function change()
+
+        
+
+        //calling the change function at an interval of 1 second to change images 
+        var timer = setInterval('change();',2000);
+        
+
+        function stop(){
+            clearInterval(timer);
+        }
+        
+        
+
+    </script>
+    
 
 </body>
 </html>

@@ -37,9 +37,9 @@
     <article>
         <h2>List of projects</h2>
         <ul>
-            <li> Built the operating System from Scratch</li>
-            <li> Architected the full stack application for Employee Reimbursement System</li>
-            <li>Built the address standardization engine that saved 200 hours of manual work</li>
+            <li>  <p id= "btn1" onclick="displayProj(1)"> <button>Library Management System  </button> </p> </li>
+            <li> <p id= "btn2" onclick="displayProj(2)"> <button>Address Standardization Engine </button>  </p> </li>
+            <li> <p id="btn3" onclick="displayProj(3)"> <button>Machine Learning Models</button>  </p> </li>
 
         </ul>
     </article>
@@ -62,6 +62,30 @@
     </article>
 
 </div>
+<script>
+
+   
+
+    function displayProj(projNum){
+        if(projNum==1){
+        document.getElementById("btn1").innerHTML = 
+        "Designed and architected a full stack web application that allows login and signup for the Librarian and the Patron ";
+       // "Allows users use various services offered in Library such as checking out the book, viewing all books, history of checkedout books, approving the patron etc using technologies like Spring,HTML,CSS, BootStrap, JSP,MySQL,Java,Servlets and employed agile methodology using scrum";
+        }
+        else if (projNum==2){
+            document.getElementById("btn2").innerHTML ="Deployed the address standardization engine using"+
+            "Python,SQL,Google APIs,Docker, and MongoDB that enabled creation of in house real time reports "+
+            "assisting executives to make faster decisions and limiting the vendor dependency";
+
+        }else{
+            document.getElementById("btn3").innerHTML ="Built a supervised machine learning model that predicted"+
+            "the customers to be targeted  for Marketing using Python libraries and SQL query that helped company for more personalized Marketing campaigns";
+        }
+    }
+
+
+
+</script>
     
 </body>
 </html>
